@@ -26,4 +26,4 @@ def before_all(context):
     print("ORION_PEP_SECRET:", context.online_config["ORION_PEP_SECRET"])
     print("MIKTAKA_PEP_SECRET:", context.online_config["MIKTAKA_PEP_SECRET"])
     if not context.config.log_capture:
-        logging.basicConfig(level=logging.DEBUG)
+        logging.basicConfig(level=logging.INFO) # INFO DEBUG

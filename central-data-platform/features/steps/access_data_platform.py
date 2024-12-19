@@ -5,15 +5,28 @@ import requests
 
 @given("the service is running")
 def step_impl(context):
-    logging.debug(f"Connecting to host: { context.online_config['HOST']}")
+    host = context.online_config['HOST']
+    logging.debug(f"Connecting to host: {host}")
+
+    # Ping the service to verify it's running
+    try:
+        response = requests.get(f"https://{host}/index.html", timeout=5)  
+        if response.status_code == 200:
+            logging.debug(f"Service is running. ")
+        else:
+            logging.error(f"Service is not running. Ping returned status code: {response.status_code}")
+            raise Exception(f"Service is not running. Status code: {response.status_code}")
+    except requests.RequestException as e:
+        logging.error(f"Failed to connect to the service: {e}")
+        raise Exception(f"Service is not reachable: {e}")
 
 
-@when("I authenticate as a partner")
+@when("I authenticate as a partner for Orion-LD")
 def step_impl(context):
     logging.debug(f"Authenticating with username: {context.online_config['PARTNER_USERNAME']} and password: {context.online_config['PARTNER_PASSWORD']}")
 
     # Authentication endpoint
-    url = "https://circuloos-platform.eurodyn.com/idm/realms/fiware-server/protocol/openid-connect/token"
+    url = f"https://{context.online_config['HOST']}/idm/realms/fiware-server/protocol/openid-connect/token"
 
     # Prepare payload dynamically
     payload = {
@@ -53,14 +66,14 @@ def step_impl(context):
         logging
 
 
-@then("I should have access to protected resources")
+@then("I should have access to protected resources on Orion-LD")
 def step_impl(context):
     # Ensure the access token is available
     assert hasattr(context, "access_token"), "Access token not found in context."
     assert context.access_token, "Access token is empty."
 
     # API endpoint to access protected resources
-    url = "https://circuloos-platform.eurodyn.com/kong/keycloak-orion/version"
+    url = f"https://{context.online_config['HOST']}/kong/keycloak-orion/version"
 
     # Headers with the Bearer token
     headers = {
@@ -99,7 +112,7 @@ def step_impl(context):
         logging.error(f"An error occurred while accessing protected resources: {e}")
         raise
 
-@then("the resource response should contain expected version information")
+@then("the resource response should contain expected version information of Orion-LD")
 def step_validate_version_info(context):
     assert hasattr(context, "protected_resource_response"), "Protected resource response not found in context."
 
