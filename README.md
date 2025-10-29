@@ -48,14 +48,14 @@ The CIRCULOOS Data platform will be used as a database for all data related to t
 Prior to any interaction with the CIRCULOOS data platform each component needs to get a BEARER token from the CIRCULOOS Keycloak.
 Detailed examples can be found in https://github.com/european-dynamics-rnd/circuloos-data-platform/tree/master/commands_URL
 
-|Component                                  |ShortName|
-|-------------------------------------------|---------|
-|Manufacturing Process Orchestration        |MPMS     |
-|Stakeholder Engagement and Collaboration   |RAMP     |
-|3D Digital Twin                            |SCDT     |
-|AI-driven Optimization                     |SCOPT    |
-|Sustainability & Lifecycle Assessment Tool |GRETA    |
-|CV-based Composition Detection             |CVTOOL   |
+|Component                                  |ShortName| Finish Integration Phase - 1|
+|-------------------------------------------|---------|-----------------------------|
+|Manufacturing Process Orchestration        |MPMS     |[]
+|Stakeholder Engagement and Collaboration   |RAMP     |[]
+|3D Digital Twin                            |SCDT     |[]
+|AI-driven Optimization                     |SCOPT    |[]
+|Sustainability & Lifecycle Assessment Tool |GRETA    |[]
+|CV-based Composition Detection             |CVTOOL   |[]
 
 
 - NGSI-LD Tenant: circuloos_integration
