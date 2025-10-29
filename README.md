@@ -25,13 +25,7 @@ The CIRCULOOS Data platform will be used as a database for all data related to t
 
 ### 3.1 Phased Integration Approach
 
-#### Phase 1: Core Infrastructure 
-- Orion-LD Context Broker setup and configuration
-- Keycloak authentication service
-- Mintaka time-series integration
-- Basic connectivity testing
-
-#### Phase 2: Business Components with core Infrastructure
+#### Phase 1: Business Components with core Infrastructure
 - Manufacturing Process Orchestration (MPMS)
 - Stakeholder Engagement and Collaboration (RAMP)
 - 3D Digital Twin (SCDT)
@@ -39,13 +33,12 @@ The CIRCULOOS Data platform will be used as a database for all data related to t
 - Sustainability & Lifecycle Assessment Tool (GRETA)
 - CV-based Composition Detection (CVTOOL)
 
-
-#### Phase 3: Intra-Business Components
+#### Phase 2: Intra-Business Components
 - Manufacturing Process Orchestration (MPMS) <-> AI-driven Optimization (SCOPT)
 - Manufacturing Process Orchestration (MPMS) <-> Sustainability & Lifecycle Assessment Tool (GRETA) ?
 - AI-driven Optimization (SCOPT) <-> Sustainability & Lifecycle Assessment Tool (GRETA) ?
 
-#### Phase 4: End-to-End Integration 
+#### Phase 3: End-to-End Integration 
 - Complete workflow testing
 - Performance optimization
 - Security hardening
@@ -75,7 +68,7 @@ Inside the entity there is a random alphanumeric value for each component. The a
 
 ```json 
 {
-  "id": "urn:ngsi-ld:CVTOOL:reading-integration-test-1",
+  "id": "urn:ngsi-ld:ORION:reading-integration-test-1",
   "type": "integration",
   "magic-number": {
     "type": "Property",
@@ -83,7 +76,7 @@ Inside the entity there is a random alphanumeric value for each component. The a
   }
 }
 ```
-Create a file named reading.json with the data received from the data platform and place it on your corresponding folder under verification
+Create a file named reading.json with the data received from the data platform and place it on your corresponding folder under verification-phase-1
 
 #### 3.2.2 Providing data to the CIRCULOOS data platform
 
@@ -91,7 +84,7 @@ Each component needs to send/POST the following entity on the data platform to v
 
 ```json
 {
-    "id": "urn:ngsi-ld:COMPONENT:writing-integration-test-1",
+    "id": "urn:ngsi-ld:ORION:writing-integration-test-1",
     "type": "integration",
     "leather_type": {
         "type": "Property",
@@ -118,24 +111,17 @@ Each component needs to send/POST the following entity on the data platform to v
 #### 3.2.3 Reading historical data from the CIRCULOOS data platform
 Each component needs to read the historical (Mintaka) data from the platform. The id that you need to request is: ```urn:ngsi-ld:COMPONENT:writing-integration-test-1```. Save the response in a file called ```historical-data.json```
 
+Create a file named writing.json with the data to be sent to the data platform and place it on your corresponding folder under verification-phase-1 folder. Next generate a pull request from both reading.json, writing.json and historical-data.json files.
 
-Create a file named writing.json with the data to be sent to the data platform and place it on your corresponding folder under verification. Next generate a pull request from both reading.json, writing.json and historical-data.json files.
+See also under the folder verification-phase-1/example for an example.
 
-## 4. Testing Strategy
+## 4. Issue Tracking and Resolution
 
-(To be completed)
-
-## 5. Performance and Security
-
-(To be completed)
-
-## 6. Issue Tracking and Resolution
-
-### 6.1 Issue Management Process
+### 4.1 Issue Management Process
 
 All integration issues will be tracked using GitHub Issues in the project repository. The workflow follows these steps:
 
-#### 6.1.1 Issue Creation
+#### 4.1.1 Issue Creation
 1. **Identify the Issue**: During integration testing, when an issue is discovered, create a new GitHub Issue immediately
 2. **Use Labels**: Apply appropriate labels:
    - `integration` - For all integration-related issues
@@ -147,22 +133,22 @@ All integration issues will be tracked using GitHub Issues in the project reposi
 3. **Assign Responsibility**: Assign to the partner responsible for the affected component
 4. **Set Milestone**: Link to the appropriate project phase milestone
 
-#### 6.1.2 Issue Tracking Workflow
+#### 4.1.2 Issue Tracking Workflow
 1. **Open** - Issue created and awaiting triage
 2. **In Progress** - Partner is actively working on the issue
 3. **Testing** - Fix implemented and ready for verification
 4. **Closed** - Issue resolved and verified
 
-#### 6.1.3 Communication Protocol
+#### 4.1.3 Communication Protocol
 - All technical discussion happens in GitHub Issue comments
 - Tag relevant partners using `@username` mentions
 - For urgent issues, notify via project communication channels (email/Slack) with GitHub Issue link
 - Update issue status within 2 business days of assignment
 - All partners must monitor issues labeled with their component name
 
-### 6.2 Escalation Procedures
+### 4.2 Escalation Procedures
 
-#### 6.2.1 Escalation Levels
+#### 4.2.1 Escalation Levels
 
 **Level 1: Component Level** (Days 1-3)
 - Issue assigned to component owner partner
@@ -180,7 +166,7 @@ All integration issues will be tracked using GitHub Issues in the project reposi
 - Impact assessment on project timeline and deliverables
 - Risk mitigation plan created
 
-#### 6.2.2 Critical Issue Fast-Track
+#### 4.2.2 Critical Issue Fast-Track
 For **critical** issues (system down, data loss, security breach):
 - Immediate notification to all partners via email and project channels
 - Label with `critical` tag
@@ -188,20 +174,14 @@ For **critical** issues (system down, data loss, security breach):
 - Daily status updates required
 - Expected resolution: 24-48 hours
 
-#### 6.2.3 Cross-Component Issues
+#### 4.2.3 Cross-Component Issues
 When issues involve multiple components:
 1. Create a parent issue with all affected component labels
 2. Create linked child issues for each component if needed
 3. Technical coordinator facilitates resolution meeting
 4. Document dependencies and integration points in issue description
 
-### 6.3 Templates and Documentation
-
-#### 6.3.1 Test Case Template
-
-(To be completed)
-
-#### 6.3.2 Issue Tracking Template
+#### 4.2.4 Issue Tracking Template
 ```markdown
 ## Issue Details
 - **Issue ID**: INT-XXX
