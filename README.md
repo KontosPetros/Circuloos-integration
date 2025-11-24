@@ -65,7 +65,10 @@ Detailed examples can be found in https://github.com/european-dynamics-rnd/circu
 - Replace timestamp with the current timestamp when the test is done
 
 #### 3.2.1 Reading from the CIRCULOOS data platform
-Each component needs to read from the CIRCULOOS data platform the following entity: urn:ngsi-ld:COMPONENT:reading-integration-test-1
+Each component needs to read from the CIRCULOOS data platform the following entity:
+
+ ```urn:ngsi-ld:COMPONENT:reading-integration-test-1```
+
 Inside the entity there is a random alphanumeric value for each component. The alphanumeric value will be used in the next step. Save the data received from the data platform as ```reading.json```
 
 ```json 
@@ -82,7 +85,11 @@ Create a file named reading.json with the data received from the data platform a
 
 #### 3.2.2 Providing data to the CIRCULOOS data platform
 
-Each component needs to send/POST the following entity on the data platform to verify their ability to read/write on the platform. The id that you need to request is: ```urn:ngsi-ld:COMPONENT:writing-integration-test-1```. Save the json-ld that you will provide to the platform as ```writing.json```
+Each component needs to send/POST the following entity on the data platform to verify their ability to read/write on the platform. The id that you need to request is: 
+
+```urn:ngsi-ld:COMPONENT:writing-integration-test-1```.
+
+ Save the json-ld that you will provide to the platform as ```writing.json```. **IMPORTANT** Replace the magic-number with the alphanumeric value received from the previous task and change the observedAt to the current data-time.
 
 ```json
 {
@@ -106,7 +113,8 @@ Each component needs to send/POST the following entity on the data platform to v
     "magic-number":
     {
       "type": "Property",
-      "value": "P5gADFDLM"
+      "value": "P5gADFDLM",
+      "observedAt": "2025-10-02T09:26:35Z"
     }
 }
 ```
@@ -116,7 +124,11 @@ Each component needs to read the historical (Mintaka) data from the platform. Th
 
 Create a file named writing.json with the data to be sent to the data platform and place it on your corresponding folder under verification-phase-1 folder. Next generate a pull request from both reading.json, writing.json and historical-data.json files.
 
-See also under the folder verification-phase-1/example for an example.
+See also under the folder verification-phase-1/example for an example. 
+
+#### 3.2.4 Postman
+
+Also there is a [Postman collection](./verification-phase-1/example/ED%20CIRCULOOS%20Platform%20Integration%20Testing.postman_collection.json). See the variables to change the username and password
 
 ## 4. Issue Tracking and Resolution
 

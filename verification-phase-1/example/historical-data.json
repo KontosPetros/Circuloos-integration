@@ -18,5 +18,11 @@
     "value": "pig",
     "observedAt": "2028-10-29T14:26:35Z",
     "instanceId": "urn:ngsi-ld:attribute:instance:c90d9816-b4c9-11f0-816f-0242ac16000b"
+  },
+  "magic-number": {
+        "type": "Property",
+        "value": "P5gADFDLM",
+        "observedAt": "2025-10-02T09:26:35Z",
+        "instanceId": "urn:ngsi-ld:attribute:instance:95637b1a-c91a-11f0-b317-0242ac16000b"
   }
 }
