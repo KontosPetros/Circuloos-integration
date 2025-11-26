@@ -4,17 +4,17 @@
     "leather_type": {
         "type": "Property",
         "value": "animal",
-        "observedAt": "2028-10-29T14:26:35Z"
+        "observedAt": "2025-10-02T09:26:35Z"
     },
     "kind_of_animal": {
         "type": "Property",
         "value": "pig",
-        "observedAt": "2028-10-29T14:26:35Z"
+        "observedAt": "2025-10-02T09:26:35Z"
     },
     "leather_type_tanned": {
         "type": "Property",
         "value": "chrome",
-        "observedAt": "2028-10-29T14:26:35Z"
+        "observedAt": "2025-10-02T09:26:35Z"
     },
     "magic-number":
     {

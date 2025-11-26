@@ -175,7 +175,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[{\r\n    \"id\": \"urn:ngsi-ld:ORION:writing-integration-test-1\",\r\n    \"type\": \"integration\",\r\n    \"leather_type\": {\r\n        \"type\": \"Property\",\r\n        \"value\": \"animal\",\r\n        \"observedAt\": \"2024-08-02T09:26:35Z\"\r\n    },\r\n    \"kind_of_animal\": {\r\n        \"type\": \"Property\",\r\n        \"value\": \"pig\",\r\n        \"observedAt\": \"2024-08-02T09:26:35Z\"\r\n    },\r\n    \"leather_type_tanned\": {\r\n        \"type\": \"Property\",\r\n        \"value\": \"chrome\",\r\n        \"observedAt\": \"2024-08-02T09:26:35Z\"\r\n    },\r\n    \"magic-number\":\r\n    {\r\n      \"type\": \"Property\",\r\n      \"value\": \"P5gADFDLM\",\r\n    \"observedAt\": \"2025-10-02T09:26:35Z\"\r\n\r\n    }\r\n}]",
+					"raw": "[{\r\n    \"id\": \"urn:ngsi-ld:ORION:writing-integration-test-1\",\r\n    \"type\": \"integration\",\r\n    \"leather_type\": {\r\n        \"type\": \"Property\",\r\n        \"value\": \"animal\",\r\n        \"observedAt\": \"2025-10-02T09:26:35Z\"\r\n    },\r\n    \"kind_of_animal\": {\r\n        \"type\": \"Property\",\r\n        \"value\": \"pig\",\r\n        \"observedAt\": \"2025-10-02T09:26:35Z\"\r\n    },\r\n    \"leather_type_tanned\": {\r\n        \"type\": \"Property\",\r\n        \"value\": \"chrome\",\r\n        \"observedAt\": \"2025-10-02T09:26:35Z\"\r\n    },\r\n    \"magic-number\":\r\n    {\r\n      \"type\": \"Property\",\r\n      \"value\": \"P5gADFDLM\",\r\n    \"observedAt\": \"2025-10-02T09:26:35Z\"\r\n\r\n    }\r\n}]",
 					"options": {
 						"raw": {
 							"language": "json"

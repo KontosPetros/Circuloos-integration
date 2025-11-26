@@ -81,6 +81,8 @@ Inside the entity there is a random alphanumeric value for each component. The a
   }
 }
 ```
+You can utilize the following command [getDataOrionSensorViaKong.sh](https://github.com/european-dynamics-rnd/circuloos-data-platform/blob/master/commands_URL/getDataOrionSensorViaKong.sh) to read/GET the data from the CIRCULOOS Data platform.
+
 Create a file named reading.json with the data received from the data platform and place it on your corresponding folder under verification-phase-1
 
 #### 3.2.2 Providing data to the CIRCULOOS data platform
@@ -98,17 +100,17 @@ Each component needs to send/POST the following entity on the data platform to v
     "leather_type": {
         "type": "Property",
         "value": "animal",
-        "observedAt": "2024-08-02T09:26:35Z"
+        "observedAt": "2025-10-02T09:26:35Z"
     },
     "kind_of_animal": {
         "type": "Property",
         "value": "pig",
-        "observedAt": "2024-08-02T09:26:35Z"
+        "observedAt": "2025-10-02T09:26:35Z"
     },
     "leather_type_tanned": {
         "type": "Property",
         "value": "chrome",
-        "observedAt": "2024-08-02T09:26:35Z"
+        "observedAt": "2025-10-02T09:26:35Z"
     },
     "magic-number":
     {
@@ -118,11 +120,15 @@ Each component needs to send/POST the following entity on the data platform to v
     }
 }
 ```
+
+You can utilize  [addDataOrionViaKong.sh](https://github.com/european-dynamics-rnd/circuloos-data-platform/blob/master/commands_URL/addDataOrionViaKong.sh) to send/POST data to the CIRCULOOS Data platform.
+
+
 #### 3.2.3 Reading historical data from the CIRCULOOS data platform
 
 Each component needs to read the historical (Mintaka) data from the platform. The id that you need to request is: ```urn:ngsi-ld:COMPONENT:writing-integration-test-1```. Save the response in a file called ```historical-data.json```
 
-Create a file named writing.json with the data to be sent to the data platform and place it on your corresponding folder under verification-phase-1 folder. Next generate a pull request from both reading.json, writing.json and historical-data.json files.
+Create a file named writing.json with the data to be sent to the data platform and place it on your corresponding folder under verification-phase-1 folder. Next generate a pull request from both reading.json, writing.json and historical-data.json files.Please use your ShortName as the name of your branch.
 
 See also under the folder verification-phase-1/example for an example. 
 
@@ -132,12 +138,12 @@ Also there is a [Postman collection](./verification-phase-1/example/ED%20CIRCULO
 
 ## 3.3 Open calls
 
-All the open calls will need to be able to read/write to the data platform. You will need to change the COMPONENT part of the ID with with your PARTNER_USERNAME.
+All the open calls will need to be able to read/write (GET/PUSH) to the data platform. You will need to change the COMPONENT part of the ID with with your PARTNER_USERNAME. Check [3.2](#32-integration-phase-1-with-circuloos-data-platform), [3.2.1](#321-reading-from-the-circuloos-data-platform), [3.2.2](#322-providing-data-to-the-circuloos-data-platform) and [3.2.4](#324-postman)
 
 So if your PARTNER_USERNAME is circuloos-european_dynamics, the ID that you need to read is:  
 ```urn:ngsi-ld:circuloos-european_dynamics:reading-integration-test-1```
 
-You will not need to upload anything to the GitHub, but you will need to include relevant screenshot to your specific deliverable. Please remember to remove/hide your PARTNER_PASSWORD from any screenshot.
+You will not need to upload anything to the GitHub (so **DO NOT** create a PULL request), but you will need to include relevant screenshot to your specific deliverable. Please remember to remove/hide your PARTNER_PASSWORD from any screenshot.
 
 
 ## 4. Issue Tracking and Resolution
